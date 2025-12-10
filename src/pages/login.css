@@ -1,0 +1,26 @@
+.card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Label color */
+.custom-textfield label {
+  color: black !important;
+}
+
+/* Input text color */
+.custom-textfield input {
+  color: black !important;
+}
+
+/* Default border color */
+.custom-textfield .MuiOutlinedInput-root fieldset {
+  border-color: black !important;
+}
+
+/* Border color on focus */
+.custom-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: black !important;
+}
