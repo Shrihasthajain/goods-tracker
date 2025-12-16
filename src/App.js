@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import OTP from "./pages/otp";
 import TransportReg from "./pages/transportreg";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/login" element={<Login />} /> 
         <Route path="/otp" element={<OTP />} /> 
         <Route path="/transportreg" element={<TransportReg/>} />
+        <Route path="/dashboard" element={<Dashboard/>} /> 
       </Routes>
     </Router>
   );

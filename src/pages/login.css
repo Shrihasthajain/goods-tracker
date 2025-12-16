@@ -1,3 +1,11 @@
+.top-logo {
+  width: 40px;
+  height: 4px;
+  margin-bottom: 0px;
+  margin-top: 30px;
+  filter: brightness(0) invert(1);
+}
+
 .card {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(18px);
@@ -5,22 +13,47 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Label color */
+/* Label - always black */
 .custom-textfield label {
   color: black !important;
 }
 
-/* Input text color */
+/* Label when focused */
+.custom-textfield label.Mui-focused {
+  color: black !important;
+}
+
+/* Input text always black */
 .custom-textfield input {
   color: black !important;
 }
 
-/* Default border color */
+/* Default + focused border always black */
 .custom-textfield .MuiOutlinedInput-root fieldset {
   border-color: black !important;
 }
 
-/* Border color on focus */
 .custom-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
   border-color: black !important;
 }
+
+/* Background NEVER changes */
+.custom-textfield .MuiOutlinedInput-root {
+  background-color: transparent !important;
+}
+
+/* Remove hover effect */
+.custom-textfield .MuiOutlinedInput-root:hover fieldset {
+  border-color: black !important;
+}
+
+/* Kill browser autofill grey/slate */
+.custom-textfield input:-webkit-autofill,
+.custom-textfield input:-webkit-autofill:hover,
+.custom-textfield input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+

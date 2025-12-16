@@ -27,12 +27,14 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#6750A4] via-[#A890CF] to-[#947BC3]
+    <div className="min-h-screen flex flex-col bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4]
  px-4">
-
+ <div className="w-full flex justify-center -mt-10">
+      <img src={imagelogo} alt="logo" className="top-logo" />
+    </div>
+    <div className="flex flex-1 items-center justify-center">
       <div
-        className=" card text-center px-8 py-10 max-w-md w-full rounded-2xl shadow-xl border border-white">
-        <img src={imagelogo} alt="logo" className="w-25 h-20 mx-auto mb-4" />
+        className="card text-center px-8 py-10 max-w-md w-full rounded-2xl shadow-xl border border-white">
 
         <p className="text-xl mb-1 font-bold text-black">Welcome Back 👋</p>
         <p className="text-md mb-6 text-black">
@@ -44,24 +46,42 @@ function Login() {
             Select Your Role
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-            <div
-              className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
-              ${selectedRole === "Transporter" ? "border-2 border-purple-900" : "border border-black"}`}
-              onClick={() => setSelectedRole("Transporter")}
-            >
-              <img src={transporter} alt="Transporter" className="w-16 h-16 mb-2" />
-              <span className="font-bold text-black">Transporter</span>
-            </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+          <div
+          className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
+          ${
+            selectedRole === "Transporter"
+              ? "bg-[#6750A4] text-white border-2"
+              : "border border-black bg-transparent text-black"
+          }`}
+          onClick={() => setSelectedRole("Transporter")}
+        >
+          <img
+            src={transporter}
+            alt="Transporter"
+            className={`w-16 h-16 mb-2 ${selectedRole === "Transporter" ? "invert brightness-200" : ""}`}
+          />
+          <span className="font-bold">Transporter</span>
+        </div>
 
-            <div
-              className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
-              ${selectedRole === "Shipper" ? "border-2 border-purple-900" : "border border-black"}`}
-              onClick={() => setSelectedRole("Shipper")}
-            >
-              <img src={shipper} alt="Shipper" className="w-16 h-16 mb-2" />
-              <span className="font-bold text-black">Shipper</span>
-            </div>
+
+      <div
+          className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
+          ${
+            selectedRole === "Shipper"
+              ? "bg-[#6750A4] text-white border-2"
+              : "border border-black bg-transparent text-black"
+          }`}
+          onClick={() => setSelectedRole("Shipper")}
+        >
+          <img
+            src={shipper}
+            alt="Shipper"
+            className={`w-16 h-16 mb-2 ${selectedRole === "Shipper" ? "invert brightness-200" : ""}`}
+          />
+          <span className="font-bold">Shipper</span>
+        </div>
+
           </div>
 
           <div className="w-full mt-3">
@@ -89,7 +109,7 @@ function Login() {
 
           <div className="mt-4 w-full">
             <button
-              className="w-full py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6750A4] via-[#A890CF] to-[#947BC3]"
+              className="w-full py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4]"
               onClick={handleContinue}
             >
               Continue
@@ -103,14 +123,16 @@ function Login() {
           <div className="bg-white p-6 rounded-xl shadow-lg text-center max-w-xs w-full">
             <p className="text-black font-semibold mb-4">{errorPopup}</p>
             <button
-              className="mt-2 px-4 py-2 bg-[#6750A4] text-white rounded-lg"
+              className="mt-2 px-20 py-2 bg-[#6750A4] text-white rounded-lg"
               onClick={() => setErrorPopup("")}
             >
               OK
             </button>
           </div>
         </div>
+        
       )}
+      </div>
     </div>
   );
 }

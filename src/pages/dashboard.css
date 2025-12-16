@@ -1,0 +1,26 @@
+.top-logo {
+  width: 250px;
+  height: 100px;
+  margin-top: 50px;
+  filter: brightness(0) invert(1);
+}
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 1rem;
+  border: 2px solid black;
+  width: 100%;        
+  height: 200px;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.05);
+}

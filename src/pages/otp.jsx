@@ -1,23 +1,21 @@
 import React,{useRef} from "react";
+import imagelogo from "../assets/imagelogo.png";
 import "./otp.css";
 
 function OTP() {
 
         const inputsRef = useRef([]);
 
-        // Handle input change
         const handleChange = (e, index) => {
             const value = e.target.value;
 
-            // Allow only numbers
             if (!/^[0-9]$/.test(value) && value !== "") return;
 
             if (value !== "" && index < 5) {
-            inputsRef.current[index + 1].focus(); // Move to next box
+            inputsRef.current[index + 1].focus(); 
             }
         };
 
-        // Handle Backspace -> Move to previous box
         const handleKeyDown = (e, index) => {
             if (e.key === "Backspace" && !e.target.value && index > 0) {
             inputsRef.current[index - 1].focus();
@@ -25,9 +23,13 @@ function OTP() {
         };
 
 return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4] px-4">
+    <div className="min-h-screen flex flex-col bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4] px-4">
+        <div className="w-full flex justify-center">
+             <img src={imagelogo} alt="logo" className="top-logo" />
+           </div>
+           <div className="flex flex-1 items-center justify-center">
       <div
-        className="card text-center px-8 py-10 max-w-md w-full rounded-2xl shadow-xl">
+        className="card text-center px-8 py-10 -mt-20 max-w-md w-full rounded-2xl shadow-xl">
         <h2 className="text-2xl font-bold text-black mb-2">OTP Verification</h2>
         <p className="text-md mb-6 text-black">
           Enter the 6-digit code sent to your phone number
@@ -58,6 +60,7 @@ return (
         >
           Verify and Continue
         </button>
+      </div>
       </div>
     </div>
   );
