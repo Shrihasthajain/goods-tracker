@@ -1,9 +1,8 @@
 .top-logo {
   width: 40px;
-  height: 4px;
+  height: 40px;
   margin-bottom: 0px;
   margin-top: 30px;
-  filter: brightness(0) invert(1);
 }
 
 .card {
@@ -12,41 +11,28 @@
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
-
-/* Label - always black */
 .custom-textfield label {
   color: black !important;
 }
-
-/* Label when focused */
 .custom-textfield label.Mui-focused {
   color: black !important;
+  font-weight: 500;
 }
-
-/* Input text always black */
 .custom-textfield input {
   color: black !important;
 }
-
-/* Default + focused border always black */
 .custom-textfield .MuiOutlinedInput-root fieldset {
   border-color: black !important;
+  border-width: 1px !important;
 }
-
 .custom-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
   border-color: black !important;
+  border-width: 1px !important;
 }
-
-/* Background NEVER changes */
-.custom-textfield .MuiOutlinedInput-root {
-  background-color: transparent !important;
-}
-
-/* Remove hover effect */
 .custom-textfield .MuiOutlinedInput-root:hover fieldset {
   border-color: black !important;
+  border-width: 1px !important;
 }
-
 /* Kill browser autofill grey/slate */
 .custom-textfield input:-webkit-autofill,
 .custom-textfield input:-webkit-autofill:hover,

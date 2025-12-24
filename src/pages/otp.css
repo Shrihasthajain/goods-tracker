@@ -11,3 +11,31 @@
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
+
+.otp-form input:-webkit-autofill,
+.otp-form input:-webkit-autofill:hover,
+.otp-form input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.otp-form input {
+  border: 1px solid #000000 !important;
+  border-radius: 8px;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.otp-form input:focus {
+  border-color: #000000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+

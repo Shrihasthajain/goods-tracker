@@ -12,3 +12,32 @@
   margin-left: 4px;
   text-align: left;
 }
+
+/* REMOVE AUTOFILL BACKGROUND COMPLETELY */
+.transporter-form input:-webkit-autofill,
+.transporter-form input:-webkit-autofill:hover,
+.transporter-form input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: black !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.transporter-form input {
+  border: 1px solid #000000 !important;
+  border-radius: 8px;
+  background-color: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.transporter-form input:focus {
+  border-color: #000000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+

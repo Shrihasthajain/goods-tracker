@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./transportreg.css";
+import { useNavigate } from "react-router-dom";
 
 function Registration() {
+  const navigate = useNavigate();
+  
   const [form, setForm] = useState({
     companyName: "",
     contactPerson: "",
@@ -64,10 +67,11 @@ function Registration() {
     if (validate()) {
       alert("Transporter Registered Successfully!");
     }
+     navigate("/dashboard");
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#6750A4] to-[#6750A4] px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#6750A4] px-4 transporter-form">
 
       <div className="card text-center px-8 py-6 mt-5 mb-5 max-w-md w-full rounded-2xl shadow-xl border border-white">
 
@@ -84,7 +88,7 @@ function Registration() {
             name="companyName"
             value={form.companyName}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3 bg-[#6750A4]"
+            className="border border-white rounded-lg p-3"
           />
           {errors.companyName && <p className="error">{errors.companyName}</p>}
 
@@ -94,7 +98,7 @@ function Registration() {
             name="contactPerson"
             value={form.contactPerson}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.contactPerson && <p className="error">{errors.contactPerson}</p>}
 
@@ -108,7 +112,7 @@ function Registration() {
               const value = e.target.value.replace(/[^0-9]/g, "");
               handleChange({ target: { name: "phone", value } });
             }}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
 
@@ -118,7 +122,7 @@ function Registration() {
             name="email"
             value={form.email}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.email && <p className="error">{errors.email}</p>}
 
@@ -128,7 +132,7 @@ function Registration() {
             name="gstin"
             value={form.gstin}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.gstin && <p className="error">{errors.gstin}</p>}
         </div>
@@ -143,7 +147,7 @@ function Registration() {
             name="vehicleType"
             value={form.vehicleType}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.vehicleType && <p className="error">{errors.vehicleType}</p>}
 
@@ -153,7 +157,7 @@ function Registration() {
             name="numVehicles"
             value={form.numVehicles}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.numVehicles && <p className="error">{errors.numVehicles}</p>}
 
@@ -163,7 +167,7 @@ function Registration() {
             name="region"
             value={form.region}
             onChange={handleChange}
-            className="border border-white bg-[#6750A4] rounded-lg p-3"
+            className="border border-white rounded-lg p-3"
           />
           {errors.region && <p className="error">{errors.region}</p>}
         </div>
@@ -181,7 +185,7 @@ function Registration() {
         {errors.terms && <p className="error">{errors.terms}</p>}
 
         <button
-          className="w-full mt-4 py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6750A4] to-[#6750A4]"
+          className="w-full mt-4 py-3 text-white font-semibold rounded-lg bg-[#6750A4]"
           onClick={handleSubmit}
         >
           Register Transporter

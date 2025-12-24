@@ -1,9 +1,10 @@
 import React,{useRef} from "react";
+import { useNavigate } from "react-router-dom";
 import imagelogo from "../assets/imagelogo.png";
 import "./otp.css";
 
 function OTP() {
-
+     const navigate = useNavigate();
         const inputsRef = useRef([]);
 
         const handleChange = (e, index) => {
@@ -23,7 +24,7 @@ function OTP() {
         };
 
 return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4] px-4">
+    <div className="min-h-screen flex flex-col bg-[#6750A4] px-4 otp-form">
         <div className="w-full flex justify-center">
              <img src={imagelogo} alt="logo" className="top-logo" />
            </div>
@@ -49,15 +50,21 @@ return (
                 />
             ))}
             </div>
-
+<div className="flex-col">
         <p className="text-black mt-4 text-sm">
           Didn't receive the code?{' '}
           <button className="underline font-semibold text-black">Resend</button>
         </p>
+        <p className="text-black mt-4 text-sm">
+          New User?{' '}
+          <button className="underline font-semibold text-black"
+          onClick={() => navigate("/transportreg")}> Register </button>
+        </p>
+        </div>
 
         <button
-          className="w-full py-3 mt-6 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4]"
-        >
+          className="w-full py-3 mt-6 text-white font-semibold rounded-lg bg-[#6750A4]"
+       onClick={() => navigate("/dashboard")} >
           Verify and Continue
         </button>
       </div>

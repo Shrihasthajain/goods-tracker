@@ -27,8 +27,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4]
- px-4">
+    <div className="min-h-screen flex flex-col bg-[#6750A4] px-4">
  <div className="w-full flex justify-center -mt-10">
       <img src={imagelogo} alt="logo" className="top-logo" />
     </div>
@@ -84,7 +83,7 @@ function Login() {
 
           </div>
 
-          <div className="w-full mt-3">
+          <div className="w-full mt-6">
             <TextField
               fullWidth
               label="Enter your phone number"
@@ -109,7 +108,7 @@ function Login() {
 
           <div className="mt-4 w-full">
             <button
-              className="w-full py-3 text-white font-semibold rounded-lg bg-gradient-to-r from-[#6750A4] via-[#6750A4] to-[#6750A4]"
+              className="w-full py-3 text-white font-semibold rounded-lg bg-[#6750A4]"
               onClick={handleContinue}
             >
               Continue

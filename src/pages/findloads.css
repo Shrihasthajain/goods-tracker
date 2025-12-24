@@ -1,0 +1,216 @@
+.findloads-wrapper {
+  width: 100%;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.findloads-header {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.filter-icon-btn {
+  background-color: transparent;
+  color: black !important;
+}
+.filter-icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.dropdown .MuiOutlinedInput-notchedOutline {
+  border: 1.5px solid black !important;
+}
+.dropdown .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: black !important;
+}
+.dropdown .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: black !important;
+}
+.dropdown .MuiSelect-icon {
+  color: #000;
+}
+.center-block {
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+.nearby-chips {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.nearby-chip {
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+  border: 1.5px solid #000 !important;
+  border-radius: 10px !important;
+  padding: 6px 10px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  background-color: transparent !important;
+  transition: all 0.25s ease !important;
+}
+
+.loads-column {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.load-card-wrapper {
+  width: 100%;
+}
+
+.load-card {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.load-card.active {
+  border: 2px solid purple;
+}
+
+.card-content {
+  position: relative;
+}
+
+.card-top-right {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.status-btn {
+  color: white !important;
+  text-transform: capitalize !important;
+  width: 100px;
+}
+
+.status-btn.completed {
+  background-color: purple !important;
+}
+
+.status-btn.ongoing {
+  background-color: #1976d2 !important;
+}
+
+.route-block {
+  margin-top: 8px;
+}
+
+.route-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.details-block {
+  margin-top: 16px;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  color: red;            
+}
+
+.price-icon {
+  font-size: 16px !important;
+  color: red;     
+}
+
+.price-amount {
+  color: red;       
+}
+
+.view-btn {
+  margin-top: 16px !important;
+  background-color: purple !important;
+  color: white !important;
+}
+.filter-btn {
+  background-color: purple !important;
+  color: white !important;
+}
+.filter-card {
+    border: 1px solid black;
+}
+.heading {
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.grey-textfield .MuiOutlinedInput-root fieldset {
+  border-color: #bdbdbd; 
+}
+.grey-textfield .MuiOutlinedInput-root:hover fieldset {
+  border-color: #bdbdbd;
+}
+.grey-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: black;
+}
+.grey-textfield .MuiInputLabel-root {
+  color: black;
+}
+.grey-textfield .MuiInputLabel-root.Mui-focused {
+  color: black;
+}
+
+.chip {
+    padding: 8px !important;
+    border: 1px solid black !important;
+    margin-top: 6px;
+    border-radius: 10px !important;
+}
+.weight-slider {
+  margin-bottom: 8px;
+  height: 8px !important;
+  border-radius: 4px;
+  color: #6750a4 !important;
+}
+.weight-slider .MuiSlider-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border: 3px solid #6750a4;
+}
+.weight-slider .MuiSlider-track {
+  border: none;
+}
+.weight-slider .MuiSlider-rail {
+  opacity: 0.3;
+}
+.price-slider {
+  margin-bottom: 8px;
+  height: 8px !important;                 
+  border-radius: 4px;
+  color: #ff5722 !important;
+}
+.price-slider .MuiSlider-thumb {
+  width: 18px;
+  height: 18px;
+  background-color: #ffffff;
+  border: 3px solid #ff5722 ;
+}
+.price-slider .MuiSlider-track {
+  border: none;
+}
+.price-slider .MuiSlider-rail {
+  opacity: 0.3;
+}
