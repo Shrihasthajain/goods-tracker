@@ -5,12 +5,14 @@ import OTP from "./pages/otp";
 import TransportReg from "./pages/transportreg";
 import Dashboard from "./pages/dashboard";
 import Findloads from "./pages/findloads";
+import UserLogin from "./pages/userlogin";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} /> 
+        <Route path="/userlogin" element={<UserLogin/>} />
         <Route path="/otp" element={<OTP />} /> 
         <Route path="/transportreg" element={<TransportReg/>} />
         <Route path="/dashboard" element={<Dashboard/>} /> 

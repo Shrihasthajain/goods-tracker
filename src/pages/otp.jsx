@@ -1,9 +1,17 @@
 import React,{useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import imagelogo from "../assets/imagelogo.png";
+import { useEffect } from "react";
 import "./otp.css";
 
 function OTP() {
+  useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto"; 
+      };
+    }, []);
+
      const navigate = useNavigate();
         const inputsRef = useRef([]);
 

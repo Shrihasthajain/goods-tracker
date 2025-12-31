@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import imagelogo from "../assets/imagelogo.png";
 import viewloads from "../assets/viewloads.png";
 import trackgoods from "../assets/trackgoods.png";
@@ -9,6 +9,13 @@ import { Home, Settings, Logout, Person, WorkspacePremium} from "@mui/icons-mate
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+  useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto"; 
+      };
+    }, []);
+
     const [activeCard, setActiveCard] = useState(null);
     const navigate = useNavigate();
   const cards = [

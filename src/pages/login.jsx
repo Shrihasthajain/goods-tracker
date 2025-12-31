@@ -4,9 +4,17 @@ import shipper from "../assets/shipper.png";
 import imagelogo from "../assets/imagelogo.png";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import "./login.css";
 
 function Login() {
+  useEffect(() => {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = "auto"; 
+      };
+    }, []);
+
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const navigate = useNavigate();

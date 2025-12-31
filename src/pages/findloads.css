@@ -150,17 +150,20 @@
 }
 .filter-card {
     border: 1px solid black;
+    border-radius: 18px !important;
+    background-color: gainsboro !important;
 }
 .heading {
     margin-bottom: 2px;
     text-align: center;
+    font-size: large !important;
 }
 
 .grey-textfield .MuiOutlinedInput-root fieldset {
-  border-color: #bdbdbd; 
+  border-color: black; 
 }
 .grey-textfield .MuiOutlinedInput-root:hover fieldset {
-  border-color: #bdbdbd;
+  border-color: black;
 }
 .grey-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
   border-color: black;
