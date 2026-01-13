@@ -20,6 +20,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { IconButton } from "@mui/material";
 import CategoryIcon from "@mui/icons-material/Category";
 import InputAdornment from "@mui/material/InputAdornment";
+import { useNavigate } from "react-router-dom";
 import "./findloads.css";
 
 function FindLoads() {
@@ -27,6 +28,7 @@ function FindLoads() {
   const [showFilter, setShowFilter] = useState(false);
   const [weight, setWeight] = useState(0);
   const [price, setPrice] = useState([10000, 50000]);
+  const navigate = useNavigate();
 
   const loads = [
     { id: 1, status: "completed" },
@@ -52,7 +54,7 @@ function FindLoads() {
 
       {!showFilter && (
         <>
-          <Box className="center-block">
+          <Box className="loads-block">
             <FormControl fullWidth size="small" className="dropdown">
               <Select Value="all">
                 <MenuItem value="all">All Loads</MenuItem>
@@ -88,7 +90,7 @@ function FindLoads() {
         >
         <CardContent className="card-content">
             <Box className="card-top-right">
-            <Typography variant="body2">
+            <Typography variant="body2" fontWeight="bold" >
                 Load added 4 hours ago
             </Typography>
 
@@ -99,22 +101,23 @@ function FindLoads() {
                 {load.status}
             </Button>
             </Box>
-
+        <div className="trip-route">
             <Typography fontWeight={600}>
             Trip Route
             </Typography>
+            </div>
 
             <Box className="route-block">
             <Box className="route-row">
                 <LocationOnIcon fontSize="small" color="success" />
-                <Typography variant="body2">
+                <Typography variant="body2" fontWeight="bold">
                 Loading: Hiriyur
                 </Typography>
             </Box>
 
             <Box className="route-row">
                 <FmdBadIcon fontSize="small" color="error"/>
-                <Typography variant="body2">
+                <Typography variant="body2" fontWeight="bold">
                 Unloading: Chitradurga
                 </Typography>
             </Box>
@@ -140,7 +143,7 @@ function FindLoads() {
             <span className="price-amount"><strong>32,007.043</strong></span>
             </Typography>
 
-            <Button fullWidth className="view-btn">
+            <Button fullWidth className="view-btn"   onClick={() => navigate("/viewdetails")}>
             View Details
             </Button>
 
@@ -157,11 +160,11 @@ function FindLoads() {
         <Card className="filter-card">
           <CardContent sx={{ p: 3 }}>
 
-         <Typography fontWeight={900} className="heading">
+         <Typography className="heading">
               Filter Loads
             </Typography>
          
-            <Typography fontWeight={700} sx={{ mb: 2 }}>
+            <Typography className="heading1">
               Route Details
             </Typography>
 
@@ -195,7 +198,7 @@ function FindLoads() {
             sx={{ mb: 3 }}
           />
 
-            <Typography fontWeight={600} sx={{ mb: 2 }}>
+            <Typography className="heading1">
               Load Specifications
             </Typography>
 
@@ -213,7 +216,7 @@ function FindLoads() {
               }}
               sx={{ mb: 3 }}
             />
-            <Typography fontWeight={600} sx={{ mb: 1 }}>
+            <Typography className="heading1">
               Vehicle Type
             </Typography>
 
@@ -228,7 +231,7 @@ function FindLoads() {
               />
             </Box>
 
-            <Typography fontWeight={600} sx={{ mb: 1 }}>
+            <Typography className="heading1">
               Weight & Price
             </Typography>
 
@@ -258,7 +261,7 @@ function FindLoads() {
               alignItems="center"
               sx={{ mb: 3 }}
             >
-              <Typography fontWeight={600}>
+              <Typography className="heading1">
                 Enable Nearby Filter
               </Typography>
               <Switch />

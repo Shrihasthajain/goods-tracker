@@ -20,7 +20,7 @@
 
 .logo {
   width: 120px;
-  height: auto;
+  height: 50px;
   /* fill: #7A4A2E; */
    filter: brightness(0) saturate(100%) invert(29%) sepia(18%) saturate(900%) hue-rotate(340deg);
 }
@@ -134,7 +134,7 @@
   width: 100%;
   margin-top: 30px;
   padding: 14px;
-  background: #5A3A1E;
+  background: #7A4A2E;
   color: white;
   border: none;
   border-radius: 10px;

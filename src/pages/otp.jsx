@@ -32,25 +32,25 @@ function OTP() {
         };
 
 return (
-    <div className="min-h-screen flex flex-col bg-[#6750A4] px-4 otp-form">
-        <div className="w-full flex justify-center">
-             <img src={imagelogo} alt="logo" className="top-logo" />
+    <div className="otp-forms otp-form">
+        <div className="otplogo">
+             <img src={imagelogo} alt="logo" className="otp-logo" />
            </div>
-           <div className="flex flex-1 items-center justify-center">
+           <div className="otp-container">
       <div
-        className="card text-center px-8 py-10 -mt-20 max-w-md w-full rounded-2xl shadow-xl">
-        <h2 className="text-2xl font-bold text-black mb-2">OTP Verification</h2>
-        <p className="text-md mb-6 text-black">
+        className="card1 otp-card">
+        <h2 className="otp-title">OTP Verification</h2>
+        <p className="otp-subtitle">
           Enter the 6-digit code sent to your phone number
         </p>
 
-          <div className="flex justify-center gap-2 mb-4 overflow-hidden">
+          <div className="otp-input-wrapper">
              {[...Array(6)].map((_, index) => (
              <input
                 key={index}
                 type="text"
                 maxLength="1"
-                className="w-10 h-10 sm:w-12 sm:h-12 text-center text-lg rounded-lg border border-black bg-white focus:outline-none focus:border-black"
+                className="otp-input"
 
               ref={(el) => (inputsRef.current[index] = el)}
               onChange={(e) => handleChange(e, index)}
@@ -59,19 +59,19 @@ return (
             ))}
             </div>
 <div className="flex-col">
-        <p className="text-black mt-4 text-sm">
+        <p className="otp-info-text">
           Didn't receive the code?{' '}
-          <button className="underline font-semibold text-black">Resend</button>
+          <button className="underline font-semibold text-[#5A3A1E]">Resend</button>
         </p>
-        <p className="text-black mt-4 text-sm">
+        <p className="otp-info-text">
           New User?{' '}
-          <button className="underline font-semibold text-black"
+          <button className="underline font-semibold text-[#5A3A1E]"
           onClick={() => navigate("/transportreg")}> Register </button>
         </p>
         </div>
 
         <button
-          className="w-full py-3 mt-6 text-white font-semibold rounded-lg bg-[#6750A4]"
+          className="otp-button"
        onClick={() => navigate("/dashboard")} >
           Verify and Continue
         </button>

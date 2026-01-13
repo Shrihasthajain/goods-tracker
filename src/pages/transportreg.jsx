@@ -71,16 +71,13 @@ function Registration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#6750A4] px-4 transporter-form">
+    <div className="transporterform transporter-form">
 
-      <div className="card text-center px-8 py-6 mt-5 mb-5 max-w-md w-full rounded-2xl shadow-xl border border-white">
+      <div className="card transporter-card">
 
-        <h3 className="text-2xl font-bold text-black">Transporter Registration Form</h3>
-
-       
-        <h2 className="text-left font-bold text-black mt-2 mb-2">Company Details</h2>
-
-        <div className="flex flex-col gap-3">
+       <h3>Transporter Registration Form</h3>
+        <h2>Company Details</h2>
+         <div className="flex-col-gap">
 
           <input
             type="text"
@@ -88,7 +85,7 @@ function Registration() {
             name="companyName"
             value={form.companyName}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.companyName && <p className="error">{errors.companyName}</p>}
 
@@ -98,7 +95,7 @@ function Registration() {
             name="contactPerson"
             value={form.contactPerson}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.contactPerson && <p className="error">{errors.contactPerson}</p>}
 
@@ -112,7 +109,7 @@ function Registration() {
               const value = e.target.value.replace(/[^0-9]/g, "");
               handleChange({ target: { name: "phone", value } });
             }}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.phone && <p className="error">{errors.phone}</p>}
 
@@ -122,7 +119,7 @@ function Registration() {
             name="email"
             value={form.email}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.email && <p className="error">{errors.email}</p>}
 
@@ -132,12 +129,12 @@ function Registration() {
             name="gstin"
             value={form.gstin}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.gstin && <p className="error">{errors.gstin}</p>}
         </div>
 
-        <h3 className="text-left font-bold text-black mt-4 mb-2">Fleet Information</h3>
+        <h3 className="section-label">Fleet Information</h3>
 
         <div className="flex flex-col gap-3">
 
@@ -147,7 +144,7 @@ function Registration() {
             name="vehicleType"
             value={form.vehicleType}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.vehicleType && <p className="error">{errors.vehicleType}</p>}
 
@@ -157,7 +154,7 @@ function Registration() {
             name="numVehicles"
             value={form.numVehicles}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.numVehicles && <p className="error">{errors.numVehicles}</p>}
 
@@ -167,12 +164,12 @@ function Registration() {
             name="region"
             value={form.region}
             onChange={handleChange}
-            className="border border-white rounded-lg p-3"
+            className="input-box"
           />
           {errors.region && <p className="error">{errors.region}</p>}
         </div>
 
-        <div className="flex items-center gap-2 mt-3">
+        <div className="checkbox">
           <input
             type="checkbox"
             name="terms"
@@ -180,12 +177,12 @@ function Registration() {
             onChange={handleChange}
             className="w-4 h-4"
           />
-          <p className="text-black text-sm py-2">I agree to the Terms and Conditions</p>
+          <p className="terms">I agree to the Terms and Conditions</p>
         </div>
         {errors.terms && <p className="error">{errors.terms}</p>}
 
         <button
-          className="w-full mt-4 py-3 text-white font-semibold rounded-lg bg-[#6750A4]"
+          className="Register-button"
           onClick={handleSubmit}
         >
           Register Transporter
