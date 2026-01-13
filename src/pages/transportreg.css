@@ -1,8 +1,8 @@
 .card {
-  background: rgba(255, 255, 255, 0.65);
+  background:#FFF8F3;
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid #D7C4B2;
 }
 
 .error {
@@ -12,8 +12,6 @@
   margin-left: 4px;
   text-align: left;
 }
-
-/* REMOVE AUTOFILL BACKGROUND COMPLETELY */
 .transporter-form input:-webkit-autofill,
 .transporter-form input:-webkit-autofill:hover,
 .transporter-form input:-webkit-autofill:focus,
@@ -28,7 +26,7 @@ select:-webkit-autofill {
 }
 
 .transporter-form input {
-  border: 1px solid #000000 !important;
+  border: 1px solid #D7C4B2 !important;
   border-radius: 8px;
   background-color: transparent !important;
   outline: none !important;
@@ -36,8 +34,91 @@ select:-webkit-autofill {
 }
 
 .transporter-form input:focus {
-  border-color: #000000 !important;
+  border-color:#D7C4B2 !important;
   outline: none !important;
   box-shadow: none !important;
 }
+
+.transporterform {
+  min-height: 100vh;         
+  display: flex;              
+  align-items: center;        
+  justify-content: center;    
+  background-color: #F6EEE8; 
+  padding-left: 1rem;        
+  padding-right: 1rem;
+}
+.transporter-card {
+  text-align: center;         
+  padding: 1.5rem 2rem;     
+  margin-top: 1.25rem;        
+  margin-bottom: 1.25rem;     
+  max-width: 28rem;          
+  width: 100%;
+  border-radius: 1rem;        
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15),
+              0 10px 10px rgba(0, 0, 0, 0.08); 
+  border: 1px solid #D7C4B2;    
+  background:#FFF8F3;  
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.transporter-card h3 {
+  font-size: 1.5rem;          
+  font-weight: 700;           
+  color:#5A3A1E;              
+  margin-bottom: 0.75rem;
+}
+
+.transporter-card h2 {
+  font-weight: 700;          
+  color:#5A3A1E;             
+  text-align: left;        
+  margin-top: 0.5rem;         
+  margin-bottom: 0.5rem;      
+}
+.flex-col-gap {
+  display: flex;             
+  flex-direction: column;     
+  gap: 0.75rem;               
+}
+.input-box {
+  border: 1px solid #D7C4B2;  
+  border-radius: 0.5rem;     
+  padding: 0.75rem;       
+  background-color: transparent; 
+  color: black; 
+}
+.section-label {
+  text-align: left;       
+  font-weight: 700;       
+  color: black;          
+  margin-top: 1rem;       
+  margin-bottom: 0.5rem;  
+}
+.checkbox {
+  display: flex;           
+  align-items: center;    
+  gap: 0.5rem;           
+  margin-top: 0.75rem;     
+}
+.terms {
+  color:#5A3A1E;            
+  font-size: 0.875rem;     
+  padding-top: 0.5rem;     
+  padding-bottom: 0.5rem;
+}
+.Register-button {
+  width: 100%;               
+  margin-top: 1rem;          
+  padding-top: 0.75rem;      
+  padding-bottom: 0.75rem;
+  color: white;            
+  font-weight: 600;         
+  border-radius: 0.5rem;     
+  background-color:#7A4A2E; 
+  border: none;
+  cursor: pointer;
+}
+
 

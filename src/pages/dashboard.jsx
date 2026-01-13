@@ -5,10 +5,14 @@ import trackgoods from "../assets/trackgoods.png";
 import adddriver from "../assets/adddriver.png";
 import diesel from "../assets/diesel.png";
 import "./dashboard.css";
-import { Home, Settings, Logout, Person, WorkspacePremium} from "@mui/icons-material";
+import { Home, History, Help, Settings, Logout, Person, WorkspacePremium} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import { NotificationsNone, NotificationsActive } from "@mui/icons-material";
 
 function Dashboard() {
+
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
   useEffect(() => {
       document.body.style.overflow = "hidden";
       return () => {
@@ -19,9 +23,9 @@ function Dashboard() {
     const [activeCard, setActiveCard] = useState(null);
     const navigate = useNavigate();
   const cards = [
-    { title: "View Loads", icon: viewloads },
+    { title: "View Loads", icon: viewloads, path:"/findloads" },
     { title: "Track Goods", icon: trackgoods },
-    { title: "Add Driver", icon: adddriver },
+    { title: "Add Driver", icon: adddriver, path:"/adddriver" },
     { title: "Diesel", icon: diesel },
   ];
 
@@ -54,6 +58,25 @@ function Dashboard() {
             <span>Home</span>
           </div>
 
+          <div className="nav-home">
+            <History />
+            <span>History</span>
+          </div>
+
+         <div
+            className="nav-home"
+            onClick={() => setIsSubscribed(!isSubscribed)}
+            style={{ cursor: "pointer" }}>
+            {isSubscribed ? <NotificationsActive /> : <NotificationsNone />}
+            <span>{isSubscribed ? "Subscribed" : "Subscribe"}</span>
+          </div>
+
+
+           <div className="nav-home">
+            <Help />
+            <span>Help</span>
+          </div>
+
           <div className="nav-premium">
             <WorkspacePremium className="crown-icon" />
             <span>Premium</span>
@@ -65,55 +88,19 @@ function Dashboard() {
         </div>
 
         <div className="cards-wrapper">
+
           <div className="grid grid-cols-2 gap-12 max-w-4xl w-full">
             {cards.map((card, index) => (
-            //   <div key={index} className="dashboard-card">
-            //     <img
-            //       src={card.icon}
-            //       alt={card.title}
-            //       className="w-16 h-16 mb-5 object-contain card-icon-white"
-            //     />
-            //     <p className="text-black font-bold text-xl text-center">
-            //       {card.title}
-            //     </p>
-            //   </div>
-
-            //  <div
-            //     key={index}
-            //     className={`dashboard-card ${
-            //       activeCard === index ? "active-card" : ""
-            //     }`}
-            //     onClick={() => setActiveCard(index)}
-            //   >
-            //     <img
-            //       src={card.icon}
-            //       alt={card.title}
-            //       className={`w-16 h-16 mb-5 object-contain ${
-            //         activeCard === index ? "icon-white" : ""
-            //       }`}
-            //     />
-
-            //     <p
-            //       className={`font-bold text-xl text-center ${
-            //         activeCard === index ? "text-white" : "text-black"
-            //       }`}
-            //     >
-            //       {card.title}
-            //     </p>
-            //   </div>
-          <div
-            key={index}
-            className={`dashboard-card ${
-              activeCard === index ? "active-card" : ""
-            }`}
-            onClick={() => {
-              setActiveCard(index);
-
-              if (card.title === "View Loads") {
-                navigate("/findloads");
-              }
-            }}
-          >
+              <div
+                key={index}
+                className={`dashboard-card ${
+                  activeCard === index ? "active-card" : ""
+                }`}
+                onClick={() => {
+                  setActiveCard(index);
+                  if (card.path) navigate(card.path);
+                }}
+              >
             <img
               src={card.icon}
               alt={card.title}
@@ -124,7 +111,7 @@ function Dashboard() {
 
             <p
               className={`font-bold text-xl text-center ${
-                activeCard === index ? "text-white" : "text-black"
+                activeCard === index ? "text-white" : "text-[#5A3A1E]"
               }`}
             >
               {card.title}

@@ -35,31 +35,31 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#6750A4] px-4">
+    <div className="login-container">
  <div className="w-full flex justify-center -mt-10">
-      <img src={imagelogo} alt="logo" className="top-logo" />
+      <img src={imagelogo} alt="logo" className="login-logo" />
     </div>
-    <div className="flex flex-1 items-center justify-center">
+    <div className="center-flex">
       <div
-        className="card text-center px-8 py-10 max-w-md w-full rounded-2xl shadow-xl border border-white">
+        className="logincard">
 
-        <p className="text-xl mb-1 font-bold text-black">Welcome Back 👋</p>
-        <p className="text-md mb-6 text-black">
+        <p className="p1">Welcome Back 👋</p>
+        <p className="p2">
           Let's get you logged in to continue your journey
         </p>
 
-        <div className="border border-black rounded-lg p-6">
-          <h2 className="text-black font-bold text-lg mb-4 text-center">
+        <div className="role-box">
+          <h2 className="role-title">
             Select Your Role
           </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <div className="role-grid">
           <div
-          className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
+          className={`role-card 
           ${
             selectedRole === "Transporter"
-              ? "bg-[#6750A4] text-white border-2"
-              : "border border-black bg-transparent text-black"
+              ? "bg-[#7A4A2E] text-white border-2"
+              : "border border-[#D7C4B2] bg-transparent text-[#5A3A1E]"
           }`}
           onClick={() => setSelectedRole("Transporter")}
         >
@@ -73,11 +73,11 @@ function Login() {
 
 
       <div
-          className={`flex flex-col items-center justify-center rounded-lg p-4 cursor-pointer 
+          className={`role-card
           ${
             selectedRole === "Shipper"
-              ? "bg-[#6750A4] text-white border-2"
-              : "border border-black bg-transparent text-black"
+              ? "bg-[#7A4A2E] text-white border-2"
+              : "border border-[#D7C4B2] bg-transparent text-[#5A3A1E]"
           }`}
           onClick={() => setSelectedRole("Shipper")}
         >
@@ -116,7 +116,7 @@ function Login() {
 
           <div className="mt-4 w-full">
             <button
-              className="w-full py-3 text-white font-semibold rounded-lg bg-[#6750A4]"
+              className="continue-button"
               onClick={handleContinue}
             >
               Continue
@@ -126,11 +126,11 @@ function Login() {
       </div>
 
       {errorPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center max-w-xs w-full">
-            <p className="text-black font-semibold mb-4">{errorPopup}</p>
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <p className="popup-text">{errorPopup}</p>
             <button
-              className="mt-2 px-20 py-2 bg-[#6750A4] text-white rounded-lg"
+              className="popup-button"
               onClick={() => setErrorPopup("")}
             >
               OK

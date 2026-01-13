@@ -1,0 +1,148 @@
+.home-wrapper {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  position: relative;
+  color: white;
+  overflow-x: hidden;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 36, 20, 0.75);
+  z-index: 0;
+}
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  backdrop-filter: blur(8px);
+}
+
+.nav-left img {
+  height: 65px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 20px;
+}
+
+.nav-right span {
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-right span:hover {
+  color: #c68b59;
+}
+.search-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+.hero {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 120px 20px 80px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f5e6d3;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  background: #7a4a2e;
+  color: white;
+  padding: 14px 35px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-btn:hover {
+  background: #c68b59;
+}
+
+.features {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 80px 60px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #c68b59;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #f3dbc4;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.premium {
+  border: 1px solid #c68b59;
+}
+
+.info-section {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px 120px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.info-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #f5e6d3;
+}
+
+.info-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+}

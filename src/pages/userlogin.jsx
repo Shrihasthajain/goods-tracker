@@ -2,8 +2,10 @@ import React from "react";
 import "./userlogin.css";
 import { useEffect } from "react";
 import imagelogo from "../assets/imagelogo.png";
+import { useNavigate } from "react-router-dom";
 
 function UserLogin() {
+  const navigate = useNavigate();
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -14,7 +16,6 @@ function UserLogin() {
     <div className="exact-wrapper">
 
       <header className="top-header">
-        {/* <div className="logo">Goods Tracker</div> */}
         <img src={imagelogo} alt="logo" className="logo" />
         <div className="auth-buttons">
           <button className="btn-login">Login</button>
@@ -56,7 +57,7 @@ function UserLogin() {
 
           <input type="text" placeholder="Email" />
           <input type="password" placeholder="Password" />
-          <button className="login-btn">Login</button>
+          <button className="login-btn" onClick={() => navigate("/login")} >Login</button>
         </div>
 
         <div className="right-text">
