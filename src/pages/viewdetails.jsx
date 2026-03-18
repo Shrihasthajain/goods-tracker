@@ -10,9 +10,12 @@ import {
 import { GiCarWheel } from "react-icons/gi";
 import imagelogo from "../assets/imagelogo.png"; 
 import "./viewdetails.css";
+import { useNavigate } from "react-router-dom";
 
 function ViewDetails() {
   const [showAssignPopup, setShowAssignPopup] = useState(false);
+  const [showNoPopup, setShowNoPopup] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="view-wrapper">
@@ -56,12 +59,34 @@ function ViewDetails() {
               Before assigning this load, please make sure the shipper knows about it. Did you get their approval?
             </p>
             <div className="viewpopup-buttons">
-           <button className="viewbtn-popup" onClick={() => setShowAssignPopup(false)}>No</button>
-           <button className="viewbtn-popup" onClick={() => setShowAssignPopup(false)}>Yes</button>
+           <button className="viewbtn-popup"onClick={() => {setShowAssignPopup(false); setShowNoPopup(true);}}>No</button>
+           <button className="viewbtn-popup" onClick={() => {setShowAssignPopup(false); navigate("/assigndriver");}}>Yes</button>
         </div>
           </div>
         </div>
       )}
+
+      {showNoPopup && (
+        <div className="viewpopup-overlay">
+          <div className="viewpopup-card">
+            <img src={imagelogo} alt="Logo" className="viewpopup-logo" />
+
+            <h2>Reach out to the Shipper</h2>
+
+            <p>
+              Please give the shipper a quick call to get clarity.
+              Staying proactive keeps the supply chain smooth!
+            </p>
+
+            <div className="viewpopup-buttons">
+              <button
+                className="viewbtn-popup"
+                onClick={() => setShowNoPopup(false)}>OK</button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

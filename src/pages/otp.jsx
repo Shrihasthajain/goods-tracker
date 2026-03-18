@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import imagelogo from "../assets/imagelogo.png";
 import { useEffect } from "react";
 import "./otp.css";
+import { useTranslation } from "react-i18next";
 
 function OTP() {
   useEffect(() => {
@@ -11,11 +12,11 @@ function OTP() {
         document.body.style.overflow = "auto"; 
       };
     }, []);
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const inputsRef = useRef([]);
 
-     const navigate = useNavigate();
-        const inputsRef = useRef([]);
-
-        const handleChange = (e, index) => {
+      const handleChange = (e, index) => {
             const value = e.target.value;
 
             if (!/^[0-9]$/.test(value) && value !== "") return;
@@ -25,7 +26,7 @@ function OTP() {
             }
         };
 
-        const handleKeyDown = (e, index) => {
+      const handleKeyDown = (e, index) => {
             if (e.key === "Backspace" && !e.target.value && index > 0) {
             inputsRef.current[index - 1].focus();
             }
@@ -39,9 +40,9 @@ return (
            <div className="otp-container">
       <div
         className="card1 otp-card">
-        <h2 className="otp-title">OTP Verification</h2>
+        <h2 className="otp-title">{t("otp.title")}</h2>
         <p className="otp-subtitle">
-          Enter the 6-digit code sent to your phone number
+          {t("otp.subtitle")}
         </p>
 
           <div className="otp-input-wrapper">
@@ -60,20 +61,20 @@ return (
             </div>
 <div className="flex-col">
         <p className="otp-info-text">
-          Didn't receive the code?{' '}
-          <button className="underline font-semibold text-[#5A3A1E]">Resend</button>
+          {t("otp.resendText")}{" "}
+          <button className="underline font-semibold text-[#5A3A1E]">{t("otp.resend")}</button>
         </p>
         <p className="otp-info-text">
-          New User?{' '}
+          {t("otp.newUser")}{" "}
           <button className="underline font-semibold text-[#5A3A1E]"
-          onClick={() => navigate("/transportreg")}> Register </button>
+          onClick={() => navigate("/transportreg")}> {t("otp.register")} </button>
         </p>
         </div>
 
         <button
           className="otp-button"
        onClick={() => navigate("/dashboard")} >
-          Verify and Continue
+          {t("otp.verify")}
         </button>
       </div>
       </div>

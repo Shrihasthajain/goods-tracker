@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import imagelogo from "../assets/imagelogo.png";
 import viewloads from "../assets/viewloads.png";
 import trackgoods from "../assets/trackgoods.png";
@@ -8,25 +8,27 @@ import "./dashboard.css";
 import { Home, History, Help, Settings, Logout, Person, WorkspacePremium} from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { NotificationsNone, NotificationsActive } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
 
 function Dashboard() {
 
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  useEffect(() => {
-      document.body.style.overflow = "hidden";
-      return () => {
-        document.body.style.overflow = "auto"; 
-      };
-    }, []);
+  // useEffect(() => {
+  //     document.body.style.overflow = "hidden";
+  //     return () => {
+  //       document.body.style.overflow = "auto"; 
+  //     };
+  //   }, []);
 
-    const [activeCard, setActiveCard] = useState(null);
-    const navigate = useNavigate();
+  const [activeCard, setActiveCard] = useState(null);
+  const navigate = useNavigate();
+  const { t } = useTranslation();
   const cards = [
-    { title: "View Loads", icon: viewloads, path:"/findloads" },
-    { title: "Track Goods", icon: trackgoods },
-    { title: "Add Driver", icon: adddriver, path:"/adddriver" },
-    { title: "Diesel", icon: diesel },
+    { title: t("dashboard.cards.viewLoads"), icon: viewloads, path:"/findloads" },
+    { title: t("dashboard.cards.trackGoods"), icon: trackgoods },
+    { title: t("dashboard.cards.addDriver"), icon: adddriver, path:"/adddriver" },
+    { title: t("dashboard.cards.diesel"), icon: diesel },
   ];
 
   return (
@@ -35,18 +37,18 @@ function Dashboard() {
        <aside className="sidebar">
         <div className="sidebar-profile">
           <Person className="profile-icon"/>
-          <p className="profile-name">My Profile</p>
+          <p>{t("dashboard.profile")}</p>
         </div>
 
         <div className="sidebar-menu">
           <div className="sidebar-item">
             <Settings /> 
-            <span>Settings</span>
+            <span>{t("dashboard.settings")}</span>
           </div>
 
           <div className="sidebar-item logout">
             <Logout /> 
-            <span>Logout</span>
+            <span>{t("dashboard.logout")}</span>
           </div>
         </div>
       </aside> 
@@ -55,12 +57,12 @@ function Dashboard() {
         <header className="top-navbar">
           <div className="nav-home">
             <Home />
-            <span>Home</span>
+            <span>{t("dashboard.home")}</span>
           </div>
 
           <div className="nav-home">
             <History />
-            <span>History</span>
+            <span>{t("dashboard.history")}</span>
           </div>
 
          <div
@@ -68,28 +70,33 @@ function Dashboard() {
             onClick={() => setIsSubscribed(!isSubscribed)}
             style={{ cursor: "pointer" }}>
             {isSubscribed ? <NotificationsActive /> : <NotificationsNone />}
-            <span>{isSubscribed ? "Subscribed" : "Subscribe"}</span>
+            <span>{isSubscribed ? t("dashboard.subscribed") : t("dashboard.subscribe")}</span>
           </div>
 
 
            <div className="nav-home">
             <Help />
-            <span>Help</span>
+            <span>{t("dashboard.help")}</span>
           </div>
 
           <div className="nav-premium">
             <WorkspacePremium className="crown-icon" />
-            <span>Premium</span>
+            <span>{t("dashboard.premium")}</span>
           </div>
         </header>
 
         <div className="logo-wrapper">
-          <img src={imagelogo} alt="logo" className="toplogo" />
+          <img src={imagelogo} alt="logo" className="dashtoplogo" />
         </div>
+
+          <div className="lines"> 
+            <h1 className="h1">{t("dashboard.headline")}</h1>
+             <p className="p">{t("dashboard.subHeadline")}</p>
+           </div>
 
         <div className="cards-wrapper">
 
-          <div className="grid grid-cols-2 gap-12 max-w-4xl w-full">
+          <div className="grid-layout">
             {cards.map((card, index) => (
               <div
                 key={index}

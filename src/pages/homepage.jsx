@@ -23,6 +23,7 @@ function HomePage() {
           <span>Home</span>
           <span>About</span>
           <span>Services</span>
+          <span onClick={() => navigate("/privacy")}> Privacy </span>
           <span>Contact Us</span>
           <FaSearch className="search-icon" />
         </div>

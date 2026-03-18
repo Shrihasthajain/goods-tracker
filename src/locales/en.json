@@ -1,0 +1,84 @@
+{
+  "language": {
+    "choose": "Choose Language",
+    "personalize": "Personalize your experience",
+    "continue": "Continue"
+  },
+
+  "login": {
+    "welcomeBack": "Welcome Back 👋",
+    "subText": "Let's get you logged in to continue your journey",
+    "selectRole": "Select Your Role",
+    "transporter": "Transporter",
+    "shipper": "Shipper",
+    "enterPhone": "Enter your phone number",
+    "phoneHelper": "Phone number must be 10 digits",
+    "selectRoleError": "Please select your role",
+    "phoneError": "Please enter a valid 10-digit phone number",
+    "ok": "OK",
+    "continue": "Continue"
+  },
+
+  "otp": {
+    "title": "OTP Verification",
+    "subtitle": "Enter the 6-digit code sent to your phone number",
+    "resendText": "Didn't receive the code?",
+    "resend": "Resend",
+    "newUser": "New User?",
+    "register": "Register",
+    "verify": "Verify and Continue"
+  },
+
+  "registration": {
+    "title": "Transporter Registration Form",
+    "companyDetails": "Company Details",
+    "fleetInfo": "Fleet Information",
+
+    "companyName": "Company Name",
+    "contactPerson": "Contact Person",
+    "phone": "Phone Number",
+    "email": "Email",
+    "gstin": "GSTIN",
+    "vehicleType": "Vehicle Type",
+    "numVehicles": "Number of Vehicles",
+    "region": "Operating Region",
+    "agree": "I agree to the",
+    "termsLink": "Terms & Conditions",
+    "register": "Register Transporter",
+
+    "errors": {
+      "companyName": "Company Name is required",
+      "contactPerson": "Contact Person is required",
+      "phone": "Phone number must be 10 digits",
+      "email": "Enter a valid email",
+      "gstin": "GSTIN must be 15 characters",
+      "vehicleType": "Vehicle Type is required",
+      "numVehicles": "Enter a valid number of vehicles",
+      "region": "Operating region is required",
+      "terms": "You must agree to the terms"
+    }
+  },
+  
+  "dashboard": {
+    "profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout",
+
+    "home": "Home",
+    "history": "History",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed",
+    "help": "Help",
+    "premium": "Premium",
+
+    "headline": "Ready to manage your Shipments?",
+    "subHeadline": "Choose an action below and get started",
+
+    "cards": {
+      "viewLoads": "View Loads",
+      "trackGoods": "Track Goods",
+      "addDriver": "Add Driver",
+      "diesel": "Diesel"
+    }
+  }
+}
