@@ -6,6 +6,7 @@ import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./login.css";
+import { useTranslation } from "react-i18next";
 
 function Login() {
   useEffect(() => {
@@ -20,15 +21,16 @@ function Login() {
   const navigate = useNavigate();
   const [selectedRole, setSelectedRole] = useState("");
   const [errorPopup, setErrorPopup] = useState("");
+  const { t } = useTranslation();
 
   const handleContinue = () => {
     if (!selectedRole) {
-      setErrorPopup("Please select your role");
+      setErrorPopup(t("login.selectRoleError"));
       return;
     }
 
     if (phone.length !== 10) {
-      setErrorPopup("Please enter a valid 10-digit phone number");
+      setErrorPopup(t("login.phoneError"));
       return;
     }
     navigate("/otp");
@@ -43,14 +45,14 @@ function Login() {
       <div
         className="logincard">
 
-        <p className="p1">Welcome Back 👋</p>
+        <p className="p1">{t("login.welcomeBack")}</p>
         <p className="p2">
-          Let's get you logged in to continue your journey
+         {t("login.subText")}
         </p>
 
         <div className="role-box">
           <h2 className="role-title">
-            Select Your Role
+           {t("login.selectRole")}
           </h2>
 
       <div className="role-grid">
@@ -68,7 +70,7 @@ function Login() {
             alt="Transporter"
             className={`w-16 h-16 mb-2 ${selectedRole === "Transporter" ? "invert brightness-200" : ""}`}
           />
-          <span className="font-bold">Transporter</span>
+          <span className="font-bold">{t("login.transporter")}</span>
         </div>
 
 
@@ -86,7 +88,7 @@ function Login() {
             alt="Shipper"
             className={`w-16 h-16 mb-2 ${selectedRole === "Shipper" ? "invert brightness-200" : ""}`}
           />
-          <span className="font-bold">Shipper</span>
+          <span className="font-bold">{t("login.shipper")}</span>
         </div>
 
           </div>
@@ -94,7 +96,7 @@ function Login() {
           <div className="w-full mt-6">
             <TextField
               fullWidth
-              label="Enter your phone number"
+              label={t("login.enterPhone")}
               type="text"
               value={phone}
               onChange={(e) => {
@@ -102,7 +104,7 @@ function Login() {
                 setPhone(value);
 
                 if (value.length !== 10) {
-                  setPhoneError("Phone number must be 10 digits");
+                  setPhoneError(t("login.phoneHelper"));
                 } else {
                   setPhoneError("");
                 }
@@ -119,7 +121,7 @@ function Login() {
               className="continue-button"
               onClick={handleContinue}
             >
-              Continue
+              {t("login.continue")}
             </button>
           </div>
         </div>
@@ -133,7 +135,7 @@ function Login() {
               className="popup-button"
               onClick={() => setErrorPopup("")}
             >
-              OK
+              {t("login.ok")}
             </button>
           </div>
         </div>

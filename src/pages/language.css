@@ -46,7 +46,7 @@
 }
 
 .lang-card {
-  padding: 18px 20px;
+  padding: 10px 20px;
   border-radius: 14px;
   border: 2px solid #D7C4B2;
   display: flex;
@@ -84,4 +84,17 @@
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
+}
+
+
+.lang-card.active {
+  background-color: #e6d3c2;   
+}
+
+.lang-card.active .lang-text {
+  color: #461f08;
+}
+
+.lang-card.active .lang-code {
+  background-color: #e6d3c2;
 }

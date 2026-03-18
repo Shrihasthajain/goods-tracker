@@ -146,3 +146,23 @@
   font-size: 1rem;
   line-height: 1.7;
 }
+/* .topbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.topbar-link {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.topbar-link:hover {
+  background-color: #EFE5DB;
+  color: #7A4A2E;
+} */

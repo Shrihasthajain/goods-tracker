@@ -11,6 +11,9 @@ import AssignDriver from "./pages/assigndriver";
 import Language from "./pages/language";
 import AddDriver from "./pages/adddriver";
 import Homepage from "./pages/homepage";
+import Tprofile from "./pages/tprofile";
+import Privacy from "./pages/privacy";
+import TermsConditions from "./pages/termsconditions";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/viewdetails" element={<ViewDetails/>} />
         <Route path="/assigndriver" element={<AssignDriver/>} />
         <Route path="/adddriver" element={<AddDriver/>} />
+        <Route path="/tprofile" element={<Tprofile/>} />
+        <Route path="/privacy" element={<Privacy/>} />
+        <Route path="/termsconditions" element={<TermsConditions/>} />
       </Routes>
     </Router>
   );

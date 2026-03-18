@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./transportreg.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Registration() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Registration() {
     region: "",
     terms: false,
   });
-
+  const { t } = useTranslation();
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -32,31 +33,31 @@ function Registration() {
     let newErrors = {};
 
     if (!form.companyName.trim()) 
-        newErrors.companyName = "Company Name is required";
+        newErrors.companyName = t("registration.companyName");
 
     if (!form.contactPerson.trim()) 
-        newErrors.contactPerson = "Contact Person is required";
+        newErrors.contactPerson = t("registration.contactPerson");
 
     if (!/^\d{10}$/.test(form.phone))
-      newErrors.phone = "Phone number must be 10 digits";
+      newErrors.phone = t("registration.phone");
 
     if (!/^\S+@\S+\.\S+$/.test(form.email))
-      newErrors.email = "Enter a valid email";
+      newErrors.email = t("registration.email");
 
     if (!/^[A-Za-z0-9]{15}$/.test(form.gstin))
-      newErrors.gstin = "GSTIN must be 15 characters";
+      newErrors.gstin = t("registration.gstin");
 
     if (!form.vehicleType.trim())
-      newErrors.vehicleType = "Vehicle Type is required";
+      newErrors.vehicleType = t("registration.vehicleType");
 
     if (!form.numVehicles || form.numVehicles <= 0)
-      newErrors.numVehicles = "Enter a valid number of vehicles";
+      newErrors.numVehicles = t("registration.numVehicles");
 
     if (!form.region.trim())
-      newErrors.region = "Operating region is required";
+      newErrors.region = t("registration.region");
 
     if (!form.terms)
-      newErrors.terms = "You must agree to the terms";
+      newErrors.terms = t("registration.terms");
 
     setErrors(newErrors);
 
@@ -75,13 +76,13 @@ function Registration() {
 
       <div className="card transporter-card">
 
-       <h3>Transporter Registration Form</h3>
-        <h2>Company Details</h2>
+       <h3>{t("registration.title")}</h3>
+        <h2>{t("registration.companyDetails")}</h2>
          <div className="flex-col-gap">
 
           <input
             type="text"
-            placeholder="Company Name"
+            placeholder={t("registration.companyName")}
             name="companyName"
             value={form.companyName}
             onChange={handleChange}
@@ -91,7 +92,7 @@ function Registration() {
 
           <input
             type="text"
-            placeholder="Contact Person"
+            placeholder={t("registration.contactPerson")}
             name="contactPerson"
             value={form.contactPerson}
             onChange={handleChange}
@@ -101,7 +102,7 @@ function Registration() {
 
           <input
             type="text"
-            placeholder="Phone Number"
+            placeholder={t("registration.phone")}
             name="phone"
             value={form.phone}
             onChange={(e) => {
@@ -115,7 +116,7 @@ function Registration() {
 
           <input
             type="email"
-            placeholder="Email"
+            placeholder={t("registration.email")}
             name="email"
             value={form.email}
             onChange={handleChange}
@@ -125,7 +126,7 @@ function Registration() {
 
           <input
             type="text"
-            placeholder="GSTIN"
+            placeholder={t("registration.gstin")}
             name="gstin"
             value={form.gstin}
             onChange={handleChange}
@@ -134,13 +135,13 @@ function Registration() {
           {errors.gstin && <p className="error">{errors.gstin}</p>}
         </div>
 
-        <h3 className="section-label">Fleet Information</h3>
+        <h3 className="section-label">{t("registration.fleetInfo")}</h3>
 
         <div className="flex flex-col gap-3">
 
           <input
             type="text"
-            placeholder="Vehicle Type"
+            placeholder={t("registration.vehicleType")}
             name="vehicleType"
             value={form.vehicleType}
             onChange={handleChange}
@@ -150,7 +151,7 @@ function Registration() {
 
           <input
             type="number"
-            placeholder="Number of Vehicles"
+            placeholder={t("registration.numVehicles")}
             name="numVehicles"
             value={form.numVehicles}
             onChange={handleChange}
@@ -160,7 +161,7 @@ function Registration() {
 
           <input
             type="text"
-            placeholder="Operating Region"
+            placeholder={t("registration.region")}
             name="region"
             value={form.region}
             onChange={handleChange}
@@ -169,23 +170,29 @@ function Registration() {
           {errors.region && <p className="error">{errors.region}</p>}
         </div>
 
-        <div className="checkbox">
-          <input
-            type="checkbox"
-            name="terms"
-            checked={form.terms}
-            onChange={handleChange}
-            className="w-4 h-4"
-          />
-          <p className="terms">I agree to the Terms and Conditions</p>
-        </div>
+      <div className="checkbox">
+            <input
+              type="checkbox"
+              name="terms"
+              checked={form.terms}
+              onChange={handleChange}
+              className="w-4 h-4"
+            />
+            <p className="terms">
+              {t("registration.agree")}{" "}
+              <Link to="/termsconditions" className="terms-link">
+                {t("registration.termsLink")}
+              </Link>
+            </p>
+      </div>
+
         {errors.terms && <p className="error">{errors.terms}</p>}
 
         <button
           className="Register-button"
           onClick={handleSubmit}
         >
-          Register Transporter
+          {t("registration.register")}
         </button>
 
       </div>
